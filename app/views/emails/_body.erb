@@ -1,0 +1,16 @@
+ <tr>
+    <td>
+      <h2>#<%=email.id%> <%= email.object%></h2> 
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= email.body %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to "Supprimer", email_path(email.id),:class => "btn btn-danger btn-sm ", remote: true, :method => :delete %>
+      <%= link_to "Marquer comme non lu", emails_path,:class => "btn btn-outline-secondary btn-sm ", remote: true, :method => :post %>
+    </td>
+  </tr>

@@ -6,7 +6,7 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.new(object: Faker::Book.title, body: Faker::Quote.most_interesting_man_in_the_world)
+    @email = Email.new(object: Faker::Book.title, body: Faker::Lorem.paragraph(sentence_count: 15, supplemental: true, random_sentences_to_add: 30) )
     if @email.save
       respond_to do |format|
         format.html { redirect_to root_path }
@@ -19,7 +19,7 @@ class EmailsController < ApplicationController
   end
 
   def index
-    @email = Email.all
+    @emails = Email.all
   end
 
   def edit
@@ -37,6 +37,10 @@ class EmailsController < ApplicationController
 
   def show
     @email = Email.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to emails_path }
+      format.js { }
+    end
   end
 
   def destroy

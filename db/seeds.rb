@@ -19,6 +19,6 @@ end
 
 15.times do
   my_emails = Email.create(object: Faker::Book.title,
-                          body: Faker::Quote.most_interesting_man_in_the_world,
+                          body: Faker::Lorem.paragraph(sentence_count: 15, supplemental: true, random_sentences_to_add: 30),
                           )
 end

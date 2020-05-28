@@ -12,8 +12,8 @@
             <th scope="col" class = 'text-center' style="width: 90%">Liste des emails</th>
           </tr>
         </thead>
-        <tbody id = 'emails'> 
-          <% @email.each do |email|%>
+        <tbody id='emails'> 
+          <% @emails.each do |email|%>
               <%= render 'email', email: email%>
           <%end%>
         </tbody>
@@ -23,16 +23,11 @@
       <table class="table table-striped table-sm">
         <thead class="thead-dark">
           <tr>
-            <th scope="col" class = 'text-center' style="width: 100%">Email Sélectionné</th>
+            <th class = 'text-center' style="width: 100%">Contenu</th>
           </tr>
         </thead>
-        <tbody>
-            <tr>
-              <td>TITRE DE L EMAIL</td>
-            </tr>
-            <tr>
-              <td>CONTENU DE L EMAIL</td>
-            </tr>
+        <tbody id='email_body'>
+           <%= render 'body', email: @emails.first%>
         </tbody>
       </table>
     </div>
