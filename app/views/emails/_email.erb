@@ -1,7 +1,12 @@
 <tr id="<%=email.id%>">
   <th>#<%=email.id%></th>
   <td>
-    <%= link_to email.object, email_path(email.id), remote: true %>
+    <% if (email.read == false)%>
+      <strong><%= link_to email.object, email_path(email.id), remote: true %></strong>
+    <% else%>
+      <i class="fas fa-book-open"></i>
+      <%= link_to email.object, email_path(email.id), remote: true %>
+    <%end%>
   </td>
 </tr>
 

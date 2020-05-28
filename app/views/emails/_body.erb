@@ -11,6 +11,11 @@
   <tr>
     <td>
       <%= link_to "Supprimer", email_path(email.id),:class => "btn btn-danger btn-sm ", remote: true, :method => :delete %>
-      <%= link_to "Marquer comme non lu", emails_path,:class => "btn btn-outline-secondary btn-sm ", remote: true, :method => :post %>
+      
+      <% if (email.read)%>
+          <%= link_to "Marquer comme non lu",email_path(email.id), :class => "btn btn-outline-secondary btn-sm ", remote: true, :method => :put %>
+      <%else%>
+          <%= link_to "Marquer comme lu",email_path(email.id), :class => "btn btn-outline-secondary btn-sm ", remote: true, :method => :put %>
+      <%end%>
     </td>
   </tr>

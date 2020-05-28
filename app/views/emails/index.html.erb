@@ -13,7 +13,7 @@
           </tr>
         </thead>
         <tbody id='emails'> 
-          <% @emails.each do |email|%>
+          <% @emails.order("id ASC").each do |email|%>
               <%= render 'email', email: email%>
           <%end%>
         </tbody>
@@ -27,7 +27,6 @@
           </tr>
         </thead>
         <tbody id='email_body'>
-           <%= render 'body', email: @emails.first%>
         </tbody>
       </table>
     </div>
