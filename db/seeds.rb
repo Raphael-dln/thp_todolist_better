@@ -16,3 +16,9 @@ require 'faker'
     my_task.save
   end
 end
+
+15.times do
+  my_emails = Email.create(object: Faker::Book.title,
+                          body: Faker::Quote.most_interesting_man_in_the_world,
+                          )
+end

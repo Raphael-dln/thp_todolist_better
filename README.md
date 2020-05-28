@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gmail like exercise - The Hacking Project # 12
 
 Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+## Heroku link
 
-* Configuration
+* Heroku link : https://morning-shore-03248.herokuapp.com/
 
-* Database creation
+## Settings
 
-* Database initialization
+* Ruby version 2.5.1
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Check Gemfile for all gems
